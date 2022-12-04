@@ -5,7 +5,7 @@ plugins {
 
 group = 'com.lsn.pj'
 version = '0.0.1'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.9'
 
 repositories {
     mavenCentral()
@@ -32,3 +32,4 @@ jar {
         )
     }
 }
+targetCompatibility = JavaVersion.VERSION_1_9
