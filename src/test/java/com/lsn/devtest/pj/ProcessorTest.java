@@ -8,7 +8,7 @@ public class ProcessorTest {
 
     @Test
     public void process_providedExample() {
-        String input = "1 2 10 7 5 3 6 6 13 0";
+        String input = "1 2 10 7 5 7 3 6 6 13 0";
 
         String output = Processor.process(input);
 
