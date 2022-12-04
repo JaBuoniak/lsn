@@ -12,7 +12,7 @@ public class ProcessorTest {
 
         String output = Processor.process(input);
 
-        String[] outputLines = output.split(System.lineSeparator());
+        String[] outputLines = output.split("\n");
         assertThat(outputLines.length).isEqualTo(5);
         assertThat(outputLines[0]).isEqualTo("1 2 5 10 20");
         assertThat(outputLines[1]).isEqualTo("count: 6");
