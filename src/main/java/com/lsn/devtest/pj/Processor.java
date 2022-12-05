@@ -24,6 +24,7 @@ public class Processor {
             if (mergedGraph.merge(graph))
                 return;
         }
+        // Since couldn't find any graph to merge into it, becomes the new one on the result list.
         mergedGraphs.add(graph);
     }
 }

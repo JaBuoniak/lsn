@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.*;
 
+/** Set of connected vertices sorted ascending */
 public class Graph {
     private final SortedSet<Integer> vertices = new TreeSet<>(Integer::compare);
 
