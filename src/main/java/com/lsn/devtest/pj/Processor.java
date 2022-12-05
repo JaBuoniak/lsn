@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Processor {
     public static int process(List<String> input) {
         // Each pair of vertices becomes separate graph
-        List<Graph> graphs = input.stream().map(Graph::parse).collect(Collectors.toList());
+        List<Graph> graphs = input.stream().map(Graph::parse).sorted(Graph::compare).collect(Collectors.toList());
         List<Graph> mergedGraphs = new ArrayList<>();
 
         for (Graph graph : graphs) {

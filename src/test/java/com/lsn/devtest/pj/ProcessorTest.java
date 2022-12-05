@@ -12,4 +12,11 @@ public class ProcessorTest {
 
         assertThat(Processor.process(input)).isEqualTo(2);
     }
+
+    @Test
+    public void process_complicatedExample() {
+        List<String> input = List.of("2 3", "1 2", "5 6", "10 12", "10 9", "9 5");
+
+        assertThat(Processor.process(input)).isEqualTo(2);
+    }
 }
