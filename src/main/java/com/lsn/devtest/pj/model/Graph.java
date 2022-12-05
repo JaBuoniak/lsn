@@ -12,6 +12,10 @@ public class Graph {
         vertices.addAll(integers);
     }
 
+    public Graph(Graph graph) {
+        vertices.addAll(graph.vertices);
+    }
+
     /** Compares {@code Graph}s according to the lowest vertex value. */
     public static int compare(Graph g1, Graph g2) {
         return g1.vertices.first().compareTo(g2.vertices.first());
@@ -27,11 +31,13 @@ public class Graph {
 
     /**
      * Merges other {@code Graph} into current if they have any common vertex.
-     * @return {@code true} if graphs had at least one common vertex and weren't identical
+     * @return {@code true} if graphs had at least one common vertex
      */
     public boolean merge(Graph other) {
-        if (other.vertices.stream().anyMatch(vertices::contains))
-            return vertices.addAll(other.vertices);
+        if (other.vertices.stream().anyMatch(vertices::contains)) {
+            vertices.addAll(other.vertices);
+            return true;
+        }
         return false;
     }
 }

@@ -25,4 +25,4 @@ Explanation: first graph contains vertices 1, 2 and 3 while the second one conta
 2. Sort graphs by the lowest vertex value ascending 
 3. For every graph of input list find in the list of merged graphs one which has almost one common vertex and merge into it.
 4. If there is no graphs with the common vertex, add current graph as new in the list of merged graphs.
-5. Count merged graphs
+5. Count merged graphs and repeat till there is no possibility to decrease this number

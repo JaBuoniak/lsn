@@ -10,13 +10,22 @@ public class Processor {
     public static int process(List<String> input) {
         // Each pair of vertices becomes separate graph
         List<Graph> graphs = input.stream().map(Graph::parse).sorted(Graph::compare).collect(Collectors.toList());
+
+        return mergeAll(graphs).size();
+    }
+
+    private static List<Graph> mergeAll(List<Graph> graphs) {
         List<Graph> mergedGraphs = new ArrayList<>();
 
         for (Graph graph : graphs) {
             mergeOrAdd(graph, mergedGraphs);
         }
 
-        return mergedGraphs.size();
+        // Repeat till no more merge possible
+        if (mergedGraphs.size() < graphs.size())
+            return mergeAll(mergedGraphs);
+
+        return mergedGraphs;
     }
 
     private static void mergeOrAdd(Graph graph, List<Graph> mergedGraphs) {
@@ -25,6 +34,6 @@ public class Processor {
                 return;
         }
         // Since couldn't find any graph to merge into it, becomes the new one on the result list.
-        mergedGraphs.add(graph);
+        mergedGraphs.add(new Graph(graph));
     }
 }
